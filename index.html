@@ -1,0 +1,187 @@
+
+<html>
+<head>
+    <title>HQ Helper</title>
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+    <script src="AC_RunActiveContent.js" language="javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.0/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <style type="text/css">
+        body {
+            background-color:#343677;
+            color:#FFF;
+            border:0px;
+            margin:0px;
+            overflow:hidden;
+            font-family: 'Open Sans', sans-serif;
+        }
+        
+        #header {
+            width:100%;
+            font-weight: bold;
+            margin-top: 100px;
+            text-align:center;
+        }
+
+        .icons{
+            display:inline-block;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .title{
+            font-size:56px;
+        }
+
+        #stats{
+            margin-top: 10px;
+        }
+
+        #content {
+            margin: 50px auto;
+            text-align: center;
+            border-radius: 15px;
+            width: 50%;
+            background-color: white;
+            padding: 15px;
+            color:black;
+            overflow:hidden;
+        }
+
+        #question{
+            width:calc(100% - 300px);
+            position:relative;
+            display:inline-block;
+            float:left;
+        }
+
+        #question h1{
+            color: #333;
+            text-align: left;
+        }
+
+        #question ul {
+            list-style-type: none;
+            padding-top: 15px;
+            padding-left: 0px;
+            color:gray;
+            font-weight:bold;
+        }
+
+        #question ul li{
+            font-size: 15px;
+            margin-top: 10px;
+            border-radius:255px;
+            background-color: #f7f7f7;
+            text-align:left;
+            padding:15px 25px;
+            cursor: pointer;
+        }
+
+        #stream{
+            position:relative;
+            margin:-15px -17px;
+            padding-right:60px;
+            float:left;
+        }
+
+        #footer{
+            margin-top:10px;
+            text-align:center;
+            width:100%;
+        }
+
+        #footer a{
+            color: white;
+            text-decoration:none;
+            font-weight:bold;
+        }
+
+        .count {
+            float:right;
+            font-weight: normal;
+            font-size:10px;
+            line-height:200%;
+        }
+
+        @media only screen and (max-width: 980px) {
+            body {
+                background-color: lightblue;
+            }
+        }
+    </style>
+    <script src="server/server.js"></script>
+
+</head>
+<body>
+<div class="wrapper">
+
+    <div id="header">
+        <div class="title">HQ Helper</div>
+
+        <div id="stats">
+            <div class="icons"><i class="fas fa-eye"></i> 2.3m</div>
+            <div class="icons"><i class="fas fa-user"></i> 60</div>
+            <div class="icons" style="color:#ff8181;"><i class="fas fa-dot-circle"></i> live</div>
+        </div>
+    </div>
+
+    <div id="content">
+        <div id="stream">
+            <script language="javascript">
+                if (AC_FL_RunContent == 0) {
+                    alert("This page requires AC_RunActiveContent.js.");
+                } else {
+                    AC_FL_RunContent(
+                        'codebase', 'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0',
+                        'width', '250',
+                        'height', '440',
+                        'src', 'live',
+                        'quality', 'high',
+                        'pluginspage', 'http://www.macromedia.com/go/getflashplayer',
+                        'align', 'middle',
+                        'play', 'true',
+                        'loop', 'true',
+                        'scale', 'showall',
+                        'wmode', 'transparent',
+                        'devicefont', 'false',
+                        'id', 'live',
+                        'bgcolor', '#fff',
+                        'name', 'live',
+                        'menu', 'true',
+                        'FlashVars', 'server=rtmp://edge-001.hype.space:1935/live&broadcastId=android_test_source',
+                        //'FlashVars', 'server=rtmp://edge-global.hype.space:1935/live&broadcastId=wirecast_source',
+                        'allowFullScreen', 'true',
+                        'allowScriptAccess','sameDomain',
+                        'movie', 'live',
+                        'salign', ''
+                    ); //end AC code
+                }
+            </script>
+        </div>
+
+        <div id="question">
+           <h1>
+               Q6 - What singer claimed that Daft Punk was playing at his house in 2005?
+           </h1>
+
+            <ul>
+                <li id="a1">James Murphy <span class="count">47583</span></li>
+                <li id="a2">Chris Martin <span class="count">23048</span></li>
+                <li id="a3">Jay-Z <span class="count">6794</span></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div id="footer">
+        contact@hqhelper.com
+    </div>
+
+</div>
+
+
+</body>
+</html>
